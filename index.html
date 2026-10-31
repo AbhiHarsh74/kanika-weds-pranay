@@ -64,6 +64,15 @@ nav a:hover{border-color:var(--gold)}
 .ev p{color:var(--muted);font-size:.98rem}
 .note{text-align:center;margin-top:28px;color:var(--muted);font-size:.95rem}
 
+/* location */
+.location{background:var(--blush)}
+.map{border:0;width:100%;height:380px;display:block;background:#e8dcd8}
+.loc-info{text-align:center;margin-top:24px}
+.loc-info h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;color:var(--green)}
+.loc-info p{color:var(--muted)}
+.loc-info .btn{border-color:var(--green);color:var(--green);margin-top:20px}
+.loc-info .btn:hover{background:var(--green);color:#fff}
+
 /* gallery */
 .gallery{background:var(--green);color:#fff}
 .gallery h2{color:#fff}.gallery .sub{color:#d6ddd9}
@@ -102,7 +111,7 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
 <body>
 
 <nav aria-label="Main">
-  <a href="#top">Home</a><a href="#story">Our story</a><a href="#events">Events</a><a href="#gallery">Photos</a><a href="#rsvp">RSVP</a>
+  <a href="#top">Home</a><a href="#story">Our story</a><a href="#events">Events</a><a href="#location">Location</a><a href="#gallery">Photos</a><a href="#rsvp">RSVP</a>
 </nav>
 
 <header class="hero" id="top">
@@ -126,7 +135,7 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
   <div class="wrap story-grid">
     <div class="ph arch">
       <span>Photo of the couple</span>
-      <img src="images/couple.jpg" alt="Pranay and Kanika" onerror="this.remove()">
+      <img src="images/couple.jpg" alt="Kanika and Pranay" onerror="this.remove()">
     </div>
     <div>
       <h2 style="text-align:left">Our story</h2>
@@ -158,18 +167,32 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
   </div>
 </section>
 
+<section class="location" id="location">
+  <div class="wrap">
+    <h2>Find us here</h2>
+    <p class="sub">Tap the map for directions on your phone.</p>
+    <iframe class="map" title="Utsav Marriage Hall on Google Maps" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.1451672191643!2d75.77330987603175!3d26.962301857956692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db312eb40afa1%3A0xf5ee672fa7f0095b!2sUtsav%20Marriage%20Hall!5e0!3m2!1sen!2sin!4v1793471280874!5m2!1sen!2sin"></iframe>
+    <div class="loc-info">
+      <h3>Utsav Marriage Hall</h3>
+      <p>197, Sector 2 Rd, Sector 2, Vijay Bari, Vidyadhar Nagar, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302039</p>
+      <!-- <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Utsav%20Marriage%20Hall%2C%20Sector%202%20Rd%2C%20Vidyadhar%20Nagar%2C%20Jaipur" target="_blank" rel="noopener">Open in Google Maps</a> -->
+    </div>
+  </div>
+</section>
+
 <section class="gallery" id="gallery">
   <div class="wrap">
     <h2>Moments</h2>
     <p class="sub">A few of our favourite memories.</p>
     <div class="grid">
       <!-- Replace images/photo1.jpg ... photo6.jpg with your own -->
-      <div class="ph tall"><span>Photo 1</span><img src="images/photo1.jpg" alt="Pranay and Kanika, photo 1" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 2</span><img src="images/photo2.jpg" alt="Pranay and Kanika, photo 2" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 3</span><img src="images/photo3.jpg" alt="Pranay and Kanika, photo 3" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 4</span><img src="images/photo4.jpg" alt="Pranay and Kanika, photo 4" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 5</span><img src="images/photo5.jpg" alt="Pranay and Kanika, photo 5" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 6</span><img src="images/photo6.jpg" alt="Pranay and Kanika, photo 6" onerror="this.remove()"></div>
+      <div class="ph tall"><span>Photo 1</span><img src="images/photo1.jpg" alt="Kanika and Pranay, photo 1" onerror="this.remove()"></div>
+      <div class="ph"><span>Photo 2</span><img src="images/photo2.jpg" alt="Kanika and Pranay, photo 2" onerror="this.remove()"></div>
+      <div class="ph"><span>Photo 3</span><img src="images/photo3.jpg" alt="Kanika and Pranay, photo 3" onerror="this.remove()"></div>
+      <div class="ph"><span>Photo 4</span><img src="images/photo4.jpg" alt="Kanika and Pranay, photo 4" onerror="this.remove()"></div>
+      <div class="ph"><span>Photo 5</span><img src="images/photo5.jpg" alt="Kanika and Pranay, photo 5" onerror="this.remove()"></div>
+      <div class="ph"><span>Photo 6</span><img src="images/photo6.jpg" alt="Kanika and Pranay, photo 6" onerror="this.remove()"></div>
     </div>
   </div>
 </section>
@@ -180,8 +203,8 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
     <p class="sub">Please let us know if you can make it.</p>
     <div class="row">
       <!-- Replace 910000000000 with a WhatsApp number (country code, no +) and the email below -->
-      <a class="btn solid" href="https://wa.me/910000000000?text=Hi%21%20We%20will%20attend%20the%20wedding%20of%20Pranay%20and%20Kanika." target="_blank" rel="noopener">RSVP on WhatsApp</a>
-      <a class="btn" href="mailto:you@example.com?subject=RSVP%20-%20Pranay%20and%20Kanika">RSVP by email</a>
+      <a class="btn solid" href="https://wa.me/910000000000?text=Hi%21%20We%20will%20attend%20the%20wedding%20of%20Kanika%20and%20Pranay." target="_blank" rel="noopener">RSVP on WhatsApp</a>
+      <a class="btn" href="mailto:you@example.com?subject=RSVP%20-%20Kanika%20and%20Pranay">RSVP by email</a>
     </div>
   </div>
 </section>
