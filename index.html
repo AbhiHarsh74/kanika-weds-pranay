@@ -8,120 +8,26 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --green:#1f3a33; --green-2:#2c4d44; --blush:#f4e4e0; --gold:#b98a2e;
-  --paper:#fffdfb; --ink:#2b2623; --muted:#6d625c;
-  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
-section{padding:96px 0}
-h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3rem);text-align:center;margin-bottom:12px;color:var(--green)}
-.sub{text-align:center;color:var(--muted);max-width:520px;margin:0 auto 48px}
-
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:center;gap:28px;padding:16px;background:rgba(255,253,251,.88);backdrop-filter:blur(8px);font-size:.9rem}
-nav a{text-decoration:none;color:var(--green);padding:2px 0;border-bottom:1px solid transparent}
-nav a:hover{border-color:var(--gold)}
-
-/* hero */
-.hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;position:relative;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 55%,#4a3b36 100%);padding:96px 24px 64px;overflow:hidden}
-.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
-.hero-in{position:relative;max-width:760px}
-.hero .pre{font-style:italic;font-family:var(--serif);font-size:1.4rem;color:#e9d8b4;margin-bottom:12px}
-.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,13vw,8rem);line-height:1;letter-spacing:.01em}
-.hero h1 .amp{display:block;font-style:italic;font-size:.4em;color:#e9d8b4;margin:.15em 0}
-.hero .date{margin-top:28px;font-size:1.15rem;letter-spacing:.14em}
-.hero .date b{font-weight:500}
-.count{display:flex;justify-content:center;gap:clamp(14px,4vw,36px);margin-top:36px}
-.count div{min-width:64px}
-.count span{display:block;font-family:var(--serif);font-size:2.4rem;line-height:1.1}
-.count small{font-size:.75rem;letter-spacing:.12em;color:#e9d8b4}
-.btn{display:inline-block;margin-top:40px;padding:13px 34px;border:1px solid #e9d8b4;color:#fff;text-decoration:none;transition:background .25s,color .25s}
-.btn:hover{background:#e9d8b4;color:var(--green)}
-
-/* story */
-.story{background:var(--blush)}
-.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.story p{margin-bottom:16px;font-size:1.05rem}
-.story .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green)}
-
-/* photo placeholders */
-.ph{position:relative;background:linear-gradient(135deg,#d9c3bd,#b9a49c);overflow:hidden;display:grid;place-items:center;color:rgba(255,255,255,.85);font-family:var(--serif);font-style:italic;font-size:1.1rem}
-.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.arch{aspect-ratio:3/4;border-radius:999px 999px 8px 8px}
-
-/* events */
-.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
-.ev{border:1px solid #e4d6b4;padding:36px 28px;text-align:center;background:#fff}
-.ev h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:var(--green);margin-bottom:6px}
-.ev .when{color:var(--gold);font-weight:500;margin-bottom:12px}
-.ev p{color:var(--muted);font-size:.98rem}
-.note{text-align:center;margin-top:28px;color:var(--muted);font-size:.95rem}
-
-/* location */
-.location{background:var(--blush)}
-.map{border:0;width:100%;height:380px;display:block;background:#e8dcd8}
-.loc-info{text-align:center;margin-top:24px}
-.loc-info h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;color:var(--green)}
-.loc-info p{color:var(--muted)}
-.loc-info .btn{border-color:var(--green);color:var(--green);margin-top:20px}
-.loc-info .btn:hover{background:var(--green);color:#fff}
-
-/* gallery */
-.gallery{background:var(--green);color:#fff}
-.gallery h2{color:#fff}.gallery .sub{color:#d6ddd9}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.grid .ph{aspect-ratio:1}
-.grid .ph:nth-child(2),.grid .ph:nth-child(5){aspect-ratio:3/4;grid-row:span 1}
-.grid .tall{grid-row:span 2;aspect-ratio:auto;min-height:100%}
-
-/* rsvp */
-.rsvp{text-align:center}
-.rsvp .btn{border-color:var(--green);color:var(--green)}
-.rsvp .btn:hover{background:var(--green);color:#fff}
-.rsvp .btn.solid{background:var(--green);color:#fff}
-.rsvp .btn.solid:hover{background:var(--green-2)}
-.rsvp .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-
-footer{padding:40px 24px;text-align:center;background:var(--blush);font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--green)}
-footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--muted);margin-top:6px}
-
-/* opening moment */
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.hero-in>*{animation:rise 1s ease both}
-.hero-in>*:nth-child(2){animation-delay:.2s}.hero-in>*:nth-child(3){animation-delay:.4s}
-.hero-in>*:nth-child(4){animation-delay:.6s}.hero-in>*:nth-child(5){animation-delay:.8s}
-@media (prefers-reduced-motion:reduce){.hero-in>*{animation:none}html{scroll-behavior:auto}}
-
-@media (max-width:720px){
-  section{padding:72px 0}
-  nav{gap:16px;font-size:.8rem}
-  .story-grid{grid-template-columns:1fr}
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .grid .tall{grid-row:auto;aspect-ratio:1}
-}
-</style>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav aria-label="Main">
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav id="nav" aria-label="Main">
   <a href="#top">Home</a><a href="#story">Our story</a><a href="#events">Events</a><a href="#location">Location</a><a href="#gallery">Photos</a><a href="#rsvp">RSVP</a>
 </nav>
 
 <header class="hero" id="top">
   <!-- Replace images/hero.jpg with your photo -->
-  <img class="bg" src="images/hero.jpg" alt="" onerror="this.remove()">
-  <div class="hero-in">
+  <img class="bg" id="heroBg" src="images/hero.jpg" alt="" onerror="this.remove()">
+  <div class="hero-in" id="heroIn">
     <p class="pre">Together with their families</p>
     <h1>Kanika <span class="amp">and</span> Pranay</h1>
     <p class="date">SUNDAY &nbsp;·&nbsp; <b>31 JANUARY 2027</b></p>
-    <div class="count" id="count" aria-live="off">
+    <!-- Wedding date/time (IST) is set in data-date -->
+    <div class="count" id="count" data-date="2027-01-31T00:00:00+05:30" aria-live="off">
       <div><span id="d">--</span><small>DAYS</small></div>
       <div><span id="h">--</span><small>HOURS</small></div>
       <div><span id="m">--</span><small>MINUTES</small></div>
@@ -133,47 +39,47 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
 
 <section class="story" id="story">
   <div class="wrap story-grid">
-    <div class="ph arch">
+    <div class="ph arch reveal">
       <span>Photo of the couple</span>
       <img src="images/IMG-20261018-WA0862.jpg" alt="Kanika and Pranay" onerror="this.remove()">
     </div>
-    <div>
-      <h2 style="text-align:left">Our story</h2>
-      <p>Two people, one beautiful journey. After sharing countless conversations, laughs and quiet moments, we have decided to begin a new chapter together.</p>
-      <p>We would be honoured to have your blessings and your presence as we celebrate with the people who matter most to us.</p>
-      <p class="sig">Kanika &amp; Pranay</p>
+    <div data-stagger="4">
+      <h2 class="title left reveal">Our story</h2>
+      <p class="reveal">Two people, one beautiful journey. After sharing countless conversations, laughs and quiet moments, we have decided to begin a new chapter together.</p>
+      <p class="reveal">We would be honoured to have your blessings and your presence as we celebrate with the people who matter most to us.</p>
+      <p class="sig reveal">Kanika &amp; Pranay</p>
     </div>
   </div>
 </section>
 
 <section id="events">
   <div class="wrap">
-    <h2>The celebration</h2>
-    <p class="sub">Join us for the festivities. Details will be updated here.</p>
-    <div class="events">
+    <h2 class="title reveal">The celebration</h2>
+    <p class="sub reveal">Join us for the festivities. Details will be updated here.</p>
+    <div class="events" data-stagger="3">
       <!-- Edit the details below -->
-      <article class="ev">
+      <article class="ev reveal">
         <h3>Wedding ceremony</h3>
         <p class="when">31 January 2027 · Time to be added</p>
         <p>Venue name, city<br>Address to be added</p>
       </article>
-      <article class="ev">
+      <article class="ev reveal">
         <h3>Reception</h3>
         <p class="when">31 January 2027 · Time to be added</p>
         <p>Venue name, city<br>Address to be added</p>
       </article>
     </div>
-    <p class="note">Add more events (Haldi, Mehendi, Sangeet) by copying an event block in the code.</p>
+    <p class="note reveal">Add more events (Haldi, Mehendi, Sangeet) by copying an event block in the code.</p>
   </div>
 </section>
 
 <section class="location" id="location">
   <div class="wrap">
-    <h2>Find us here</h2>
-    <p class="sub">Tap the map for directions on your phone.</p>
-    <iframe class="map" title="Utsav Marriage Hall on Google Maps" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
+    <h2 class="title reveal">Find us here</h2>
+    <p class="sub reveal">Tap the map for directions on your phone.</p>
+    <iframe class="map reveal reveal-zoom" title="Utsav Marriage Hall on Google Maps" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.1451672191643!2d75.77330987603175!3d26.962301857956692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db312eb40afa1%3A0xf5ee672fa7f0095b!2sUtsav%20Marriage%20Hall!5e0!3m2!1sen!2sin!4v1793471280874!5m2!1sen!2sin"></iframe>
-    <div class="loc-info">
+    <div class="loc-info reveal">
       <h3>Utsav Marriage Hall</h3>
       <p>197, Sector 2 Rd, Sector 2, Vijay Bari, Vidyadhar Nagar, Jaipur, Jaipur Nagar Nigam Area, Rajasthan 302039</p>
       <!-- <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Utsav%20Marriage%20Hall%2C%20Sector%202%20Rd%2C%20Vidyadhar%20Nagar%2C%20Jaipur" target="_blank" rel="noopener">Open in Google Maps</a> -->
@@ -183,28 +89,27 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
 
 <section class="gallery" id="gallery">
   <div class="wrap">
-    <h2>Moments</h2>
-    <p class="sub">A few of our favourite memories.</p>
-    <div class="grid">
-      <!-- Replace images/photo1.jpg ... photo6.jpg with your own -->
-      <div class="ph tall"><span>Photo 1</span><img src="images/IMG-20261018-WA0013.jpg" alt="Kanika and Pranay, photo 1" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 2</span><img src="images/IMG-20261018-WA0058.jpg" alt="Kanika and Pranay, photo 2" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 3</span><img src="images/IMG-20261018-WA0440.jpg" alt="Kanika and Pranay, photo 3" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 4</span><img src="images/IMG-20261018-WA0762.jpg" alt="Kanika and Pranay, photo 4" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 5</span><img src="images/IMG-20261018-WA0794.jpg" alt="Kanika and Pranay, photo 5" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 6</span><img src="images/IMG-20261018-WA0839.jpg" alt="Kanika and Pranay, photo 6" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 6</span><img src="images/IMG-20261018-WA0862.jpg" alt="Kanika and Pranay, photo 6" onerror="this.remove()"></div>
-      <div class="ph"><span>Photo 6</span><img src="images/IMG-20261018-WA0162.jpg" alt="Kanika and Pranay, photo 6" onerror="this.remove()"></div>
+    <h2 class="title reveal">Moments</h2>
+    <p class="sub reveal">A few of our favourite memories.</p>
+    <div class="grid" data-stagger="3">
+      <!-- Add or remove photos by copying a .ph block -->
+      <div class="ph tall reveal"><span>Photo 1</span><img src="images/IMG-20261018-WA0013.jpg" alt="Kanika and Pranay, photo 1" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 2</span><img src="images/IMG-20261018-WA0058.jpg" alt="Kanika and Pranay, photo 2" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 3</span><img src="images/IMG-20261018-WA0440.jpg" alt="Kanika and Pranay, photo 3" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 4</span><img src="images/IMG-20261018-WA0762.jpg" alt="Kanika and Pranay, photo 4" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 5</span><img src="images/IMG-20261018-WA0794.jpg" alt="Kanika and Pranay, photo 5" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 6</span><img src="images/IMG-20261018-WA0839.jpg" alt="Kanika and Pranay, photo 6" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 7</span><img src="images/IMG-20261018-WA0862.jpg" alt="Kanika and Pranay, photo 7" loading="lazy" onerror="this.remove()"></div>
+      <div class="ph reveal"><span>Photo 8</span><img src="images/IMG-20261018-WA0162.jpg" alt="Kanika and Pranay, photo 8" loading="lazy" onerror="this.remove()"></div>
     </div>
   </div>
 </section>
 
 <section class="rsvp" id="rsvp">
   <div class="wrap">
-    <h2>Kindly reply</h2>
-    <p class="sub">Please let us know if you can make it.</p>
-    <div class="row">
-      <!-- Replace 910000000000 with a WhatsApp number (country code, no +) and the email below -->
+    <h2 class="title reveal">Kindly reply</h2>
+    <p class="sub reveal">Please let us know if you can make it.</p>
+    <div class="row reveal">
       <a class="btn solid" href="https://wa.me/917014059560?text=Hi%21%20We%20will%20attend%20the%20wedding%20of%20Kanika%20and%20Pranay." target="_blank" rel="noopener">RSVP on WhatsApp</a>
       <a class="btn" href="mailto:harshabhinandan74@gmail.com?subject=RSVP%20-%20Kanika%20and%20Pranay">RSVP by email</a>
     </div>
@@ -216,21 +121,6 @@ footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.
   <small>31 January 2027 · We can’t wait to celebrate with you</small>
 </footer>
 
-<script>
-(function(){
-  // Wedding date (IST). Change time here once it is fixed.
-  var target = new Date("2027-01-31T00:00:00+05:30").getTime();
-  var el = {d:document.getElementById("d"),h:document.getElementById("h"),m:document.getElementById("m"),s:document.getElementById("s")};
-  function pad(n){return String(n).padStart(2,"0")}
-  function tick(){
-    var diff = Math.max(0, target - Date.now());
-    el.d.textContent = Math.floor(diff/864e5);
-    el.h.textContent = pad(Math.floor(diff/36e5)%24);
-    el.m.textContent = pad(Math.floor(diff/6e4)%60);
-    el.s.textContent = pad(Math.floor(diff/1e3)%60);
-  }
-  tick(); setInterval(tick,1000);
-})();
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

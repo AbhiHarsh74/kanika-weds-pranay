@@ -1,0 +1,130 @@
+/* ---------- Tokens ---------- */
+:root{
+  --green:#1f3a33; --green-2:#2c4d44; --blush:#f4e4e0; --gold:#b98a2e;
+  --paper:#fffdfb; --ink:#2b2623; --muted:#6d625c;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3rem);text-align:center;margin-bottom:12px;color:var(--green)}
+.sub{text-align:center;color:var(--muted);max-width:520px;margin:0 auto 48px}
+
+/* ---------- Scroll progress + nav ---------- */
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:20}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:center;gap:28px;padding:16px;background:rgba(255,253,251,.88);backdrop-filter:blur(8px);font-size:.9rem;transition:box-shadow .3s,padding .3s}
+nav.scrolled{box-shadow:0 2px 18px rgba(31,58,51,.12);padding:12px 16px}
+nav a{text-decoration:none;color:var(--green);padding:2px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+nav a:hover,nav a.active{border-color:var(--gold)}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;color:#fff;position:relative;background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 55%,#4a3b36 100%);padding:96px 24px 64px;overflow:hidden}
+.hero img.bg{position:absolute;top:-10%;left:0;width:100%;height:120%;object-fit:cover;opacity:.35;will-change:transform}
+.hero-in{position:relative;max-width:760px;will-change:transform,opacity}
+.hero .pre{font-style:italic;font-family:var(--serif);font-size:1.4rem;color:#e9d8b4;margin-bottom:12px}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,13vw,8rem);line-height:1;letter-spacing:.01em}
+.hero h1 .amp{display:block;font-style:italic;font-size:.4em;color:#e9d8b4;margin:.15em 0}
+.hero .date{margin-top:28px;font-size:1.15rem;letter-spacing:.14em}
+.hero .date b{font-weight:500}
+.count{display:flex;justify-content:center;gap:clamp(14px,4vw,36px);margin-top:36px}
+.count div{min-width:64px}
+.count span{display:block;font-family:var(--serif);font-size:2.4rem;line-height:1.1}
+.count small{font-size:.75rem;letter-spacing:.12em;color:#e9d8b4}
+.btn{display:inline-block;margin-top:40px;padding:13px 34px;border:1px solid #e9d8b4;color:#fff;text-decoration:none;transition:background .25s,color .25s}
+.btn:hover{background:#e9d8b4;color:var(--green)}
+
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-in>*{animation:rise 1s ease both}
+.hero-in>*:nth-child(2){animation-delay:.2s}.hero-in>*:nth-child(3){animation-delay:.4s}
+.hero-in>*:nth-child(4){animation-delay:.6s}.hero-in>*:nth-child(5){animation-delay:.8s}
+
+/* ---------- Story ---------- */
+.story{background:var(--blush)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.story p{margin-bottom:16px;font-size:1.05rem}
+.story .sig{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--green)}
+.title.left{text-align:left}
+
+/* ---------- Photo placeholders ---------- */
+.ph{position:relative;background:linear-gradient(135deg,#d9c3bd,#b9a49c);overflow:hidden;display:grid;place-items:center;color:rgba(255,255,255,.85);font-family:var(--serif);font-style:italic;font-size:1.1rem}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arch{aspect-ratio:3/4;border-radius:999px 999px 8px 8px}
+
+/* ---------- Events ---------- */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.ev{border:1px solid #e4d6b4;padding:36px 28px;text-align:center;background:#fff}
+.ev h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:var(--green);margin-bottom:6px}
+.ev .when{color:var(--gold);font-weight:500;margin-bottom:12px}
+.ev p{color:var(--muted);font-size:.98rem}
+.note{text-align:center;margin-top:28px;color:var(--muted);font-size:.95rem}
+
+/* ---------- Location ---------- */
+.location{background:var(--blush)}
+.map{border:0;width:100%;height:380px;display:block;background:#e8dcd8}
+.loc-info{text-align:center;margin-top:24px}
+.loc-info h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;color:var(--green)}
+.loc-info p{color:var(--muted)}
+.loc-info .btn{border-color:var(--green);color:var(--green);margin-top:20px}
+.loc-info .btn:hover{background:var(--green);color:#fff}
+
+/* ---------- Gallery ---------- */
+.gallery{background:var(--green);color:#fff}
+.gallery h2{color:#fff}.gallery .sub{color:#d6ddd9}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid .ph{aspect-ratio:1}
+.grid .tall{grid-row:span 2;aspect-ratio:auto;min-height:100%}
+
+/* ---------- RSVP + footer ---------- */
+.rsvp{text-align:center}
+.rsvp .btn{border-color:var(--green);color:var(--green)}
+.rsvp .btn:hover{background:var(--green);color:#fff}
+.rsvp .btn.solid{background:var(--green);color:#fff}
+.rsvp .btn.solid:hover{background:var(--green-2)}
+.rsvp .row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+footer{padding:40px 24px;text-align:center;background:var(--blush);font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--green)}
+footer small{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;color:var(--muted);margin-top:6px}
+
+/* ---------- Scroll reveal (only when JS is on, so content never gets stuck hidden) ---------- */
+.js .reveal{opacity:0;transform:translateY(30px);
+  transition:opacity .9s var(--ease) var(--d,0ms),transform .9s var(--ease) var(--d,0ms)}
+.js .reveal-zoom{transform:scale(.96)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* couple photo: the frame fades up, then the image wipes in from the bottom.
+   The clip is on the <img>, not the observed element, so the observer always fires. */
+.js .arch img{clip-path:inset(100% 0 0 0);transform:scale(1.25);
+  transition:clip-path 1.4s cubic-bezier(.65,0,.25,1) .15s,transform 1.8s var(--ease) .15s}
+.js .arch.in img{clip-path:inset(0);transform:scale(1)}
+
+/* gold line that draws under section titles */
+.title::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin:14px auto 0;transition:transform 1s var(--ease) .35s}
+.title.left::after{margin-left:0;transform-origin:left}
+.js .title:not(.in)::after{transform:scaleX(0)}
+.gallery .title::after{background:#e9d8b4}
+
+/* gallery photos zoom out as they appear */
+.js .grid .ph img{transform:scale(1.18);transition:transform 1.6s var(--ease)}
+.js .grid .ph.in img{transform:scale(1)}
+.js .grid .ph.in:hover img{transform:scale(1.06);transition-duration:.8s}
+
+/* ---------- Responsive + accessibility ---------- */
+@media (max-width:720px){
+  section{padding:72px 0}
+  nav{gap:16px;font-size:.8rem}
+  .story-grid{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .grid .tall{grid-row:auto;aspect-ratio:1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero-in>*{animation:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .js .arch img,.js .grid .ph img{transform:none;clip-path:none;transition:none}
+  .js .title:not(.in)::after{transform:none}
+  .progress{display:none}
+}
