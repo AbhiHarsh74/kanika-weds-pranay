@@ -41,7 +41,8 @@
   <div class="wrap story-grid">
     <div class="ph arch reveal">
       <span>Photo of the couple</span>
-      <img src="images/IMG-20261018-WA0862.jpg" alt="Kanika and Pranay" onerror="this.remove()">
+      <!-- Slideshow is filled from couple_photos/ by js/slideshow.js; data-fallback shows if the list is empty -->
+      <div class="slides" id="slides" data-fallback="images/IMG-20261018-WA0862.jpg"></div>
     </div>
     <div data-stagger="4">
       <h2 class="title left reveal">Our story</h2>
@@ -121,6 +122,8 @@
   <small>31 January 2027 · We can’t wait to celebrate with you</small>
 </footer>
 
+<script src="js/couple-photos.js" defer></script>
 <script src="js/main.js" defer></script>
+<script src="js/slideshow.js" defer></script>
 </body>
 </html>
